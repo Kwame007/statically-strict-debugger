@@ -1,8 +1,16 @@
 {
+  "type": "module",
   "devDependencies": {
+    "@testing-library/dom": "^9.0.0",
+    "@testing-library/jest-dom": "^5.16.5",
     "@types/chart.js": "^2.9.41",
+    "@types/jest": "^29.5.0",
     "@types/node": "^22.15.17",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.7.0",
     "nodemon": "^3.1.10",
+    "ts-jest": "^29.1.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
@@ -10,6 +18,9 @@
     "start": "ts-node src/index.ts",
     "build": "tsc",
     "dev": "ts-node src/index.ts",
-    "watch": "tsc --watch"
+    "watch": "tsc --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   }
 }

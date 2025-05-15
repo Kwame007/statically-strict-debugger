@@ -1,7 +1,6 @@
-
 'use strict'
 
-import General from "./general.js";
+import General from "./general";
 
 class Light extends General {
     private debounceTimeouts: Map<HTMLElement, number> = new Map();
@@ -149,7 +148,7 @@ class Light extends General {
                     }
                 }, 50);
 
-                this.debounceTimeouts.set(slider, timeout);
+                this.debounceTimeouts.set(slider, timeout as unknown as number);
             };
 
             slider.addEventListener('input', listener);

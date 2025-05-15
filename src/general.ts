@@ -82,7 +82,7 @@ class General {
             this.notificationTimeouts.delete(element);
         }, 2000);
         
-        this.notificationTimeouts.set(element, timeout);
+        this.notificationTimeouts.set(element, timeout as unknown as number);
     }
 
     selector(identifier:string): Element | null {
