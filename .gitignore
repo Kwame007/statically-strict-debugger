@@ -1,0 +1,5 @@
+todo
+*.drawio
+.vscode/
+.DS_Store
+node_modules
