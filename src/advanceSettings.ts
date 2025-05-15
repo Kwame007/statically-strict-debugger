@@ -270,6 +270,29 @@ class AdvanceSettings extends Light {
         return selectedComponent[key] = data;
     }
 
+    getComponentData(element: HTMLElement, ancestorIdentifier: string, childElement: string): Component | undefined {
+        const parentElement = element.closest(ancestorIdentifier);
+        if (!parentElement) {
+            console.error(`Parent element with identifier "${ancestorIdentifier}" not found`);
+            return undefined;
+        }
+
+        const nameElement = parentElement.querySelector(childElement);
+        if (!nameElement || !nameElement.textContent) {
+            console.error(`Child element "${childElement}" not found or has no text content`);
+            return undefined;
+        }
+
+        const componentName = nameElement.textContent.toLowerCase().trim();
+        const component = this.getSelectedComponent(componentName) as Component | undefined;
+        if (!component) {
+            console.error(`Component "${componentName}" not found`);
+            return undefined;
+        }
+
+        return component;
+    }
+
     capFirstLetter (word:string) : string {
         if (!word) return word;
         return word[0].toUpperCase();
